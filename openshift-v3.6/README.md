@@ -133,6 +133,11 @@ $ sudo su
 Note: at this point, your openshift origin cluster will be building. It takes typically 15-30 min and at the end
 	you should be getting something like hundreds of packages installed 50 something changed
 
+>>PLAY RECAP 
+>>192.168.122.100: ok=705 changed=184 unreachable=0    failed=0
+>>192.168.122.101: ok=268 changed=64  unreachable=0    failed=0
+>>localhost: ok=15  changed=0    unreachable=0    failed=0
+
 
 >>If something goes awry, try to investigate and restart the provision
 
