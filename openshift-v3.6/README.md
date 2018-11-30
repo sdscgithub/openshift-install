@@ -116,15 +116,17 @@ $ for i in 192.168.122.100 192.168.122.101; do ssh-copy-id root@$i; done
 
 ```
 
-### Check for the right version and use ansible-playbood to provision openshift origin v3.6.0 cluster
+### Check for the right version and use ansible-playbook to provision openshift origin v3.6.0 cluster
 
+* Note: this process is based on the current directory i.e. /openshift-3.6 because the inventory file paths have to be correct (e.g. ./host )
 
 ```
 
 $ sudo su
-$ which ansible-playbook
-$ ansible-playbook --version
-$ ansible-playbook -i ./hosts /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml -vvv 
+# pwd
+# which ansible-playbook
+# ansible-playbook --version
+# ansible-playbook -i ./hosts /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml -vvv 
 
 ```
 
