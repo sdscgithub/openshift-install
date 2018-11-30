@@ -29,7 +29,9 @@ $ docker network inspect -f "{{range .IPAM.Config }}{{ .Subnet }}{{end}}" bridge
 
 ```
 
-## Do this on one of the nodes only pick one: master is OK
+## This section forward is to be done on one of the nodes only pick one: master is OK
+
+```
 $ sudo yum install -y wget
 $ wget https://github.com/openshift/origin/releases/download/v3.6.0/openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz
 
@@ -44,11 +46,7 @@ $ sudo pip install mdv
 
 ```
 
->>Not sure we need this
->>$ oc adm policy add-cluster-role-to-group system:openshift:templateservicebroker-client system:unauthenticated system:authenticated
-
-
-#### Ansible Playbook Bundle (Optional - for later)
+### Ansible Playbook Bundle (Optional - for later)
 
 ```
 
@@ -66,8 +64,7 @@ $ wget  https://raw.githubusercontent.com/ansibleplaybookbundle/ansible-playbook
 
 ```
 
-```
-## Install OO v3.6.0
+### Install OO v3.6.0 playbooks
 
 ```
 
@@ -81,6 +78,7 @@ $ sudo yum install openshift-ansible-playbooks
 ### Configure NetworkManager
 * Note: The networkmanager is needed because we will use nip.io to be our default DNS and nip.io will resolve 
 	our local host/node names to be the local ip addr. 
+
 ```
 $ sudo systemctl enable NetworkManager --now
 $ sudo vim /etc/NetworkManager/NetworkManager.conf 
@@ -90,7 +88,7 @@ $ sudo systemctl status NetworkManager
 
 ```
 
-## Install ansible version 2.2.2.0 - compatible with OO v3.6.0
+### Install ansible version 2.2.2.0 - compatible with OO v3.6.0
 
 ```
 $ sudo yum -y install httpd-tools gcc python-devel python-pip
@@ -136,7 +134,7 @@ Note: at this point, your openshift origin cluster will be building. It takes ty
 
 
 
-#### If something goes awry, try to investigate and restart the provision
+>> If something goes awry, try to investigate and restart the provision
 
 ```
 
