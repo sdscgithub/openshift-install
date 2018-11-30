@@ -107,6 +107,7 @@ $ ansible --version
 
 * Note: for this example, the cluster only has 2 nodes 192.168.122.100,101 
 	other config might have more nodes
+
 ```
 
 $ ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
@@ -116,6 +117,7 @@ $ for i in 192.168.122.100 192.168.122.101; do ssh-copy-id root@$i; done
 ```
 
 ### Check for the right version and use ansible-playbood to provision openshift origin v3.6.0 cluster
+
 
 ```
 
@@ -127,17 +129,12 @@ $ ansible-playbook -i ./hosts /usr/share/ansible/openshift-ansible/playbooks/byo
 ```
 
 Note: at this point, your openshift origin cluster will be building. It takes typically 15-30 min and at the end
-	you should be getting something like
-
->>
->> 
+	you should be getting something like hundreds of packages installed 50 something changed
 
 
-
->> If something goes awry, try to investigate and restart the provision
+>>If something goes awry, try to investigate and restart the provision
 
 ```
-
 $ sudo ansible-playbook -i ./hosts /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml --limit @/usr/share/ansible/openshift-ansible/playbooks/byo/config.retry
 
 ```
