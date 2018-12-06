@@ -1,2 +1,0 @@
-
-dnf install -y git
