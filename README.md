@@ -30,3 +30,27 @@ $ sudo bash install/9_check_prerequisites.sh
 $ sudo bash install/10_deploy_cluster.sh
 
 ```
+
+## make NetworkManager not over writting /etc/resolv.conf
+
+Create a script as mentioned below in /etc/Networkmanager/dispatcher.d/ and don't forget to make it executable:
+
+```
+#!/bin/bash
+#
+# Override /etc/resolv.conf and tell
+# NetworkManagerDispatcher to go pluck itself.
+#
+# scripts in the /etc/NetworkManager/dispatcher.d/ directory
+# are called alphabetically and are passed two parameters:
+# $1 is the interface name, and $2 is "up" or "down" as the
+# case may be.
+
+# Here, no matter what interface or state, override the
+# created resolver config with my config.
+
+cp -f /etc/resolv.conf.custom /etc/resolv.conf
+```
+
+entry of /etc/resolv.conf.custom
+nameserver 8.8.8.8
