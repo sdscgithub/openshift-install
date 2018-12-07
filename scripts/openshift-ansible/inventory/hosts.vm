@@ -5,10 +5,10 @@ masters
 etcd
 
 [OSEv3:vars]
-openshift_192.168.230.8_cluster_public_hostname=None
-openshift_192.168.230.8_default_subdomain=apps.192.168.230.9.nip.io
+openshift_192.168.208.8_cluster_public_hostname=None
+openshift_192.168.208.8_cluster_hostname=None
+openshift_192.168.208.8_default_subdomain=apps.192.168.208.9.nip.io
 ansible_ssh_user=root
-openshift_192.168.230.8_cluster_hostname=None
 openshift_override_hostname_check=true
 deployment_type=origin
 
@@ -19,15 +19,15 @@ openshift_disable_check=disk_availability,memory_availability,docker_storage
 openshift_disable_check=disk_availability,memory_availability,docker_storage
 
 [masters]
-192.168.230.8  openshift_public_ip=192.168.230.8 openshift_ip=192.168.230.8 openshift_public_hostname=ocp1.192.168.230.8.nip.io openshift_hostname=ocp1.192.168.230.8.nip.io connect_to=192.168.230.8 ansible_connection=local
+192.168.208.8  openshift_public_ip=192.168.208.8 openshift_ip=192.168.208.8 openshift_public_hostname=ocp1.192.168.208.8.nip.io openshift_hostname=ocp1.192.168.208.8.nip.io connect_to=192.168.208.8 ansible_connection=local
 
 [nodes]
-192.168.230.8  openshift_public_ip=192.168.230.8 openshift_ip=192.168.230.8 openshift_public_hostname=ocp1.192.168.230.8.nip.io openshift_hostname=ocp1.192.168.230.8.nip.io connect_to=192.168.230.8 openshift_schedulable=True ansible_connection=local
-192.168.230.9  openshift_public_ip=192.168.230.9 openshift_ip=192.168.230.9 openshift_public_hostname=ocp2.192.168.230.9.nip.io openshift_hostname=ocp2.192.168.230.9.nip.io connect_to=192.168.230.9 openshift_node_labels="{'region': 'infra'}" openshift_schedulable=True
-192.168.230.10  openshift_public_ip=192.168.230.10 openshift_ip=192.168.230.10 openshift_public_hostname=ocp3.192.168.230.10.nip.io openshift_hostname=ocp3.192.168.230.10.nip.io connect_to=192.168.230.10 openshift_node_labels="{'region': 'infra'}" openshift_schedulable=True
+192.168.208.8  openshift_public_ip=192.168.208.8 openshift_ip=192.168.208.8 openshift_public_hostname=ocp1.192.168.208.8.nip.io openshift_hostname=ocp1.192.168.208.8.nip.io connect_to=192.168.208.8 openshift_schedulable=True ansible_connection=local
+192.168.208.9  openshift_public_ip=192.168.208.9 openshift_ip=192.168.208.9 openshift_public_hostname=ocp2.192.168.208.9.nip.io openshift_hostname=ocp2.192.168.208.9.nip.io connect_to=192.168.208.9 openshift_node_labels="{'region': 'infra'}" openshift_schedulable=True
+192.168.208.10  openshift_public_ip=192.168.208.10 openshift_ip=192.168.208.10 openshift_public_hostname=ocp3.192.168.208.10.nip.io openshift_hostname=ocp3.192.168.208.10.nip.io connect_to=192.168.208.10 openshift_node_labels="{'region': 'infra'}" openshift_schedulable=True
 
 [nfs]
-192.168.230.8  openshift_public_ip=192.168.230.8 openshift_ip=192.168.230.8 openshift_public_hostname=ocp1.192.168.230.8.nip.io openshift_hostname=ocp1.192.168.230.8.nip.io connect_to=192.168.230.8 ansible_connection=local
+192.168.208.8  openshift_public_ip=192.168.208.8 openshift_ip=192.168.208.8 openshift_public_hostname=ocp1.192.168.208.8.nip.io openshift_hostname=ocp1.192.168.208.8.nip.io connect_to=192.168.208.8 ansible_connection=local
 
 [etcd]
-192.168.230.8  openshift_public_ip=192.168.230.8 openshift_ip=192.168.230.8 openshift_public_hostname=ocp1.192.168.230.8.nip.io openshift_hostname=ocp1.192.168.230.8.nip.io connect_to=192.168.230.8 ansible_connection=local
+192.168.208.8  openshift_public_ip=192.168.208.8 openshift_ip=192.168.208.8 openshift_public_hostname=ocp1.192.168.208.8.nip.io openshift_hostname=ocp1.192.168.208.8.nip.io connect_to=192.168.208.8 ansible_connection=local

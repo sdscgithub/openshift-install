@@ -1,3 +1,8 @@
+#!/bin/bash
+if [ $# -lt 1 ] ; then
+  echo "enter the inventory file name (hosts.xxx) ";
+  exit;
+fi
 
 cd openshift-ansible \
-  && ansible-playbook -i ./inventory/hosts.vm playbooks/prerequisites.yml -vvv
+  && ansible-playbook -i ./inventory/$1 playbooks/prerequisites.yml -vvv
