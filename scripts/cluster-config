@@ -4,5 +4,6 @@ if [ $# -lt 1 ] ; then
   exit;
 fi
 
+
 cd openshift-ansible \
-  && ansible-playbook -i ./inventory/$1 playbooks/prerequisites.yml -vvv
+  && ansible-playbook -i ../../inventory/$1 playbooks/deploy_cluster.yml -vvv -e openshift_disable_check=package_version

@@ -1,3 +1,4 @@
+#!/bin/bash
 
 if grep 'SELINUX=disabled' /etc/selinux/config; then
    sed -i 's/SELINUX=.*$/SELINUX=permissive/g' /etc/selinux/config
