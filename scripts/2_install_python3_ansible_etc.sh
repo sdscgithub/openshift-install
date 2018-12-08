@@ -17,6 +17,9 @@ git clone https://github.com/openshift/openshift-ansible
 cd openshift-ansible
 git checkout release-3.9
 
+# python supports
+sudo dnf install libsemanage-python
+
 # Installing Docker
 sudo dnf install -y docker-1.13.1
 

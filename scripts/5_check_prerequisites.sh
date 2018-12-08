@@ -6,5 +6,5 @@ fi
 
 echo "Using inventory file: $1"
 
-cd ../openshift-ansible \
+cd openshift-ansible \
   && ansible-playbook -i ../inventory/$1 playbooks/prerequisites.yml -vvv

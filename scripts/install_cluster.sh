@@ -6,4 +6,4 @@ fi
 
 
 cd openshift-ansible \
-  && ansible-playbook -i ../../inventory/$1 playbooks/openshift-hosted/config.yml -vvv
+  && ansible-playbook -i ../inventory/$1 playbooks/deploy_cluster.yml -vvv 

@@ -1,7 +1,7 @@
 #!/bin/bash
 file="../nodes"
 #if [ ! -f /root/.ssh/id_rsa ]
-#ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
+ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
 
 while IFS= read -r var; 
 do 
