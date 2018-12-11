@@ -8,7 +8,8 @@ etcd
 ansible_ssh_user=root
 debug_level=4
 deployment_type=origin
-
+openshift_release=v3.9
+openshift_pkg_version=-3.9.0
 openshift_192.168.208.8_cluster_public_hostname=None
 openshift_192.168.208.8_cluster_hostname=None
 openshift_192.168.208.8_default_subdomain=apps.192.168.208.9.nip.io
