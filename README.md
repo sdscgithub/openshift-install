@@ -52,5 +52,32 @@ Create a script as mentioned below in /etc/Networkmanager/dispatcher.d/ and don'
 cp -f /etc/resolv.conf.custom /etc/resolv.conf
 ```
 
-entry of /etc/resolv.conf.custom
+* Create a script (DNSoverride) in /etc/NetworkManager/dispatcher.d
+
+```
+[root@localhost dispatcher.d]# cat DNSoverride
+#!/bin/bash
+#
+# Override /etc/resolv.conf and tell
+# NetworkManagerDispatcher to go pluck itself.
+#
+# scripts in the /etc/NetworkManager/dispatcher.d/ directory
+# are called alphabetically and are passed two parameters:
+# $1 is the interface name, and $2 is "up" or "down" as the
+# case may be.
+
+# Here, no matter what interface or state, override the
+# created resolver config with my config.
+
+cp -f /etc/resolv.conf.custom /etc/resolv.conf
+
+```
+
+* entry of /etc/resolv.conf.custom
+
+```
+search nip.io
 nameserver 8.8.8.8
+nameserver 4.4.2.2
+
+```
